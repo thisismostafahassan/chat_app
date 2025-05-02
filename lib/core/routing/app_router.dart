@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/presentation/bloc/home_bloc.dart';
 import '../../features/sign/presentation/pages/login_page.dart' show LoginPage;
+import '../../features/sign/presentation/pages/sign_up_page.dart'
+    show SignUpPage;
 
 class AppRouter {
   static final homeBloc = HomeBloc();
@@ -19,6 +21,16 @@ class AppRouter {
             return BlocProvider.value(
               value: homeBloc,
               child: const LoginPage(),
+            );
+          },
+        );
+      // Sign Up Page
+      case SignUpPage.routeName:
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider.value(
+              value: homeBloc,
+              child: const SignUpPage(),
             );
           },
         );

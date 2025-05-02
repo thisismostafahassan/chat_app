@@ -1,19 +1,17 @@
 import 'package:chat_app/core/routing/app_router.dart';
-import 'package:chat_app/core/routing/routing_methods.dart';
 import 'package:chat_app/core/themes/colors/app_colors.dart';
 import 'package:chat_app/core/widgets/custom_sized_box.dart';
 import 'package:chat_app/core/widgets/custom_text_button.dart';
 import 'package:chat_app/core/widgets/custom_text_field.dart';
 import 'package:chat_app/features/sign/presentation/bloc/sign_bloc.dart';
-import 'package:chat_app/features/sign/presentation/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
-  static const String routeName = '/LoginPage';
-  const LoginPage({super.key});
+class SignUpPage extends StatelessWidget {
+  static const String routeName = '/SignUpPage';
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +43,7 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Login to your account',
+                        'Sign Up',
                         style: GoogleFonts.aBeeZee(
                           color: Colors.white,
                           fontSize: 50.sp,
@@ -71,7 +69,7 @@ class LoginPage extends StatelessWidget {
                   //
                   CustomSizedBox(height: 30),
                   //
-                  CustomTextButton(text: 'Login', onPressed: () {}),
+                  CustomTextButton(text: 'Sign Up', onPressed: () {}),
                   //
                   CustomSizedBox(height: 30),
                   //
@@ -79,15 +77,12 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Don't have an account?",
+                        "Already have an account?",
                         style: TextStyle(color: Colors.cyan),
                       ),
                       TextButton(
                         onPressed: () {
-                          pushToNamedScreen(
-                            context,
-                            routeName: SignUpPage.routeName,
-                          );
+                          Navigator.pop(context);
                         },
                         child: Text(
                           'Sign Up',
