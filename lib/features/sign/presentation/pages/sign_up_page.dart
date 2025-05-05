@@ -85,7 +85,7 @@ class SignUpPage extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Sign Up',
+                          'Login',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),

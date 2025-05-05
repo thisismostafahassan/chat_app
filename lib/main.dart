@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:developer';
+import 'package:chat_app/core/themes/themes.dart';
 import 'package:chat_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:chat_app/features/sign/presentation/pages/login_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:chat_app/core/helper/app_bloc_observer.dart';
 import 'package:chat_app/core/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'features/sign/presentation/bloc/sign_bloc.dart';
 
 void main() async {
@@ -33,6 +35,7 @@ void main() async {
             child: MaterialApp(
               onGenerateRoute: appRouter.onGenerateRoute,
               debugShowCheckedModeBanner: false,
+              theme: Themes().lightThemeData(),
 
               home: MyApp(),
             ),

@@ -24,6 +24,7 @@ class LoginPage extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Form(
+            key: context.read<SignBloc>().loginFormKey,
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
