@@ -58,13 +58,21 @@ class LoginPage extends StatelessWidget {
                   CustomSizedBox(height: 30),
                   //
                   CustomTextField(
+                    focusNode: context.read<SignBloc>().loginEmailFocusNode,
                     controller: context.read<SignBloc>().loginEmailController,
+
+                    onFieldSubmitted: (_) {
+                      FocusScope.of(context).requestFocus(
+                        context.read<SignBloc>().loginPassFocusNode,
+                      );
+                    },
                     hintText: 'Email',
                   ),
                   //
                   CustomSizedBox(height: 20),
                   //
                   CustomTextField(
+                    focusNode: context.read<SignBloc>().loginPassFocusNode,
                     controller:
                         context.read<SignBloc>().loginPasswordController,
                     hintText: 'Password',

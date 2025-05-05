@@ -55,15 +55,22 @@ class SignUpPage extends StatelessWidget {
                   CustomSizedBox(height: 30),
                   //
                   CustomTextField(
-                    controller: context.read<SignBloc>().loginEmailController,
+                    focusNode: context.read<SignBloc>().signUpEmailFocusNode,
+                    controller: context.read<SignBloc>().signUpEmailController,
                     hintText: 'Email',
+                    onFieldSubmitted: (_) {
+                      FocusScope.of(context).requestFocus(
+                        context.read<SignBloc>().signUpPassFocusNode,
+                      );
+                    },
                   ),
                   //
                   CustomSizedBox(height: 20),
                   //
                   CustomTextField(
+                    focusNode: context.read<SignBloc>().signUpPassFocusNode,
                     controller:
-                        context.read<SignBloc>().loginPasswordController,
+                        context.read<SignBloc>().signUpPasswordController,
                     hintText: 'Password',
                   ),
                   //
