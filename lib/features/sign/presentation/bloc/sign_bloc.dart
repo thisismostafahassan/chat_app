@@ -24,7 +24,8 @@ class SignBloc extends Bloc<SignEvent, SignState> {
   final FocusNode? signUpPassFocusNode = FocusNode();
   TextEditingController signUpEmailController = TextEditingController();
   TextEditingController signUpPasswordController = TextEditingController();
-  late User newUser;
+  // User
+  late User myUser;
   //
   SignBloc() : super(SignInitial()) {
     // SignUp Event
@@ -42,7 +43,7 @@ class SignBloc extends Bloc<SignEvent, SignState> {
           emit(SignUpState());
         },
         (r) {
-          newUser = r;
+          myUser = r;
           emit(SignUpState());
         },
       );
@@ -62,7 +63,7 @@ class SignBloc extends Bloc<SignEvent, SignState> {
           emit(SignUpState());
         },
         (r) {
-          newUser = r;
+          myUser = r;
           emit(SignUpState());
         },
       );

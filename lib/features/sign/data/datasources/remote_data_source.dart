@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'dart:nativewrappers/_internal/vm/lib/developer.dart';
+import 'dart:developer';
+
 import 'package:chat_app/core/errors/exceptions.dart';
 import 'package:chat_app/features/sign/data/datasources/base_remote_datasource.dart';
 import 'package:firebase_auth/firebase_auth.dart';

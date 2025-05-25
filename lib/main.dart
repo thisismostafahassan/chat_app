@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:developer';
-
 import 'package:chat_app/core/themes/themes.dart';
 import 'package:chat_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:chat_app/features/sign/presentation/pages/login_page.dart';

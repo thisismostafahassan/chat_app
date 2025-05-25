@@ -22,6 +22,7 @@ class SignUpPage extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Form(
+            key: context.read<SignBloc>().signUpFormKey,
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +77,31 @@ class SignUpPage extends StatelessWidget {
                   //
                   CustomSizedBox(height: 30),
                   //
-                  CustomTextButton(text: 'Sign Up', onPressed: () {}),
+                  CustomTextButton(
+                    text: 'Sign Up',
+                    onPressed: () {
+                      if (context
+                          .read<SignBloc>()
+                          .signUpFormKey
+                          .currentState!
+                          .validate()) {
+                        context.read<SignBloc>().add(
+                          SignUpEvent(
+                            email:
+                                context
+                                    .read<SignBloc>()
+                                    .signUpEmailController
+                                    .text,
+                            password:
+                                context
+                                    .read<SignBloc>()
+                                    .signUpPasswordController
+                                    .text,
+                          ),
+                        );
+                      }
+                    },
+                  ),
                   //
                   CustomSizedBox(height: 30),
                   //
